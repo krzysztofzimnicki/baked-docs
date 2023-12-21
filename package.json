@@ -1,0 +1,26 @@
+{
+  "name": "docs-remix",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "remix dev"
+  },
+  "devDependencies": {
+    "@mdx-js/rollup": "^3.0.0",
+    "@remix-run/dev": "^2.4.0",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@remix-run/node": "^2.4.0",
+    "@remix-run/react": "^2.4.0",
+    "@remix-run/serve": "^2.4.0",
+    "@types/react": "^18.2.45",
+    "isbot": "^3.7.1",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-dom/server": "react-dom/server"
+  }
+}
