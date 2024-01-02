@@ -12272,14 +12272,14 @@ window.$RefreshSig$ = prevRefreshSig;
 // _components/react-button.tsx
 var import_jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime(), 1);
 function ReactButton() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("button", { className: "bg-red-500 rounded-xl", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { children: "Click me!" }, void 0, false, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("button", { className: "bg-red-500 rounded-xl p-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { children: "Click me!" }, void 0, false, {
     fileName: "_components/react-button.tsx",
     lineNumber: 7,
-    columnNumber: 13
+    columnNumber: 7
   }, this) }, void 0, false, {
     fileName: "_components/react-button.tsx",
     lineNumber: 6,
-    columnNumber: 9
+    columnNumber: 5
   }, this);
 }
 
@@ -12364,4 +12364,4 @@ prismjs/prism.js:
    * @public
    *)
 */
-//# sourceMappingURL=/build/routes/components-PDHYFG7Z.js.map
+//# sourceMappingURL=/build/routes/components-NBUF32BU.js.map

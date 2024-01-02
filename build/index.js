@@ -115,52 +115,61 @@ function handleBrowserRequest(request, responseStatusCode, responseHeaders, remi
 // app/root.tsx
 var root_exports = {};
 __export(root_exports, {
-  default: () => App
+  default: () => App,
+  links: () => links
 });
 import { Links, Meta, Outlet, Scripts } from "@remix-run/react";
+
+// app/styles/tailwind.css
+var tailwind_default = "/build/_assets/tailwind-HBYR4COC.css";
+
+// app/root.tsx
 import { jsxDEV as jsxDEV2 } from "react/jsx-dev-runtime";
+var links = () => [
+  { rel: "stylesheet", href: tailwind_default }
+];
 function App() {
   return /* @__PURE__ */ jsxDEV2("html", { children: [
     /* @__PURE__ */ jsxDEV2("head", { children: [
       /* @__PURE__ */ jsxDEV2(Meta, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 7,
+        lineNumber: 13,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ jsxDEV2(Links, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 8,
+        lineNumber: 14,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/root.tsx",
-      lineNumber: 6,
+      lineNumber: 12,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ jsxDEV2("body", { children: [
       /* @__PURE__ */ jsxDEV2("h1", { children: "Hello world!" }, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 11,
+        lineNumber: 17,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ jsxDEV2(Outlet, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 12,
+        lineNumber: 18,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ jsxDEV2(Scripts, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 13,
+        lineNumber: 19,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/root.tsx",
-      lineNumber: 10,
+      lineNumber: 16,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/root.tsx",
-    lineNumber: 5,
+    lineNumber: 11,
     columnNumber: 5
   }, this);
 }
@@ -206,14 +215,14 @@ import { jsxDEV as jsxDEV4 } from "react/jsx-dev-runtime";
 // _components/react-button.tsx
 import { jsxDEV as jsxDEV5 } from "react/jsx-dev-runtime";
 function ReactButton() {
-  return /* @__PURE__ */ jsxDEV5("button", { className: "bg-red-500 rounded-xl", children: /* @__PURE__ */ jsxDEV5("p", { children: "Click me!" }, void 0, !1, {
+  return /* @__PURE__ */ jsxDEV5("button", { className: "bg-red-500 rounded-xl p-4", children: /* @__PURE__ */ jsxDEV5("p", { children: "Click me!" }, void 0, !1, {
     fileName: "_components/react-button.tsx",
     lineNumber: 7,
-    columnNumber: 13
+    columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "_components/react-button.tsx",
     lineNumber: 6,
-    columnNumber: 9
+    columnNumber: 5
   }, this);
 }
 
@@ -277,7 +286,7 @@ function Component() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-XFCPLNET.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-4TB67T4M.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-N2GCAXRV.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-MNWKFVC4.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/component": { id: "routes/component", parentId: "root", path: "component", index: void 0, caseSensitive: void 0, module: "/build/routes/component-MXG77LB2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/components": { id: "routes/components", parentId: "root", path: "components", index: void 0, caseSensitive: void 0, module: "/build/routes/components-PDHYFG7Z.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "6b2ebb26", hmr: { runtime: "/build/_shared/chunk-N2GCAXRV.js", timestamp: 1704187654763 }, url: "/build/manifest-6B2EBB26.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-XFCPLNET.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-4TB67T4M.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-N2GCAXRV.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-BDSOXRQQ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/component": { id: "routes/component", parentId: "root", path: "component", index: void 0, caseSensitive: void 0, module: "/build/routes/component-MXG77LB2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/components": { id: "routes/components", parentId: "root", path: "components", index: void 0, caseSensitive: void 0, module: "/build/routes/components-NBUF32BU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "baf07c6f", hmr: { runtime: "/build/_shared/chunk-N2GCAXRV.js", timestamp: 1704195214893 }, url: "/build/manifest-BAF07C6F.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1 }, publicPath = "/build/", entry = { module: entry_server_node_exports }, routes = {

@@ -17,6 +17,9 @@ import {
   __toESM
 } from "/build/_shared/chunk-PNG5AS42.js";
 
+// app/styles/tailwind.css
+var tailwind_default = "/build/_assets/tailwind-HBYR4COC.css";
+
 // app/root.tsx
 var import_jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
 if (!window.$RefreshReg$ || !window.$RefreshSig$ || !window.$RefreshRuntime$) {
@@ -36,50 +39,53 @@ if (import.meta) {
     //@ts-expect-error
     "app/root.tsx"
   );
-  import.meta.hot.lastModified = "1703237358768.1768";
 }
+var links = () => [{
+  rel: "stylesheet",
+  href: tailwind_default
+}];
 function App() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("html", { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("head", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Meta, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 25,
+        lineNumber: 29,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Links, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 26,
-        columnNumber: 9
-      }, this)
-    ] }, void 0, true, {
-      fileName: "app/root.tsx",
-      lineNumber: 24,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("body", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h1", { children: "Hello world!" }, void 0, false, {
-        fileName: "app/root.tsx",
-        lineNumber: 29,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Outlet, {}, void 0, false, {
-        fileName: "app/root.tsx",
         lineNumber: 30,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Scripts, {}, void 0, false, {
-        fileName: "app/root.tsx",
-        lineNumber: 31,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/root.tsx",
       lineNumber: 28,
       columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("body", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h1", { children: "Hello world!" }, void 0, false, {
+        fileName: "app/root.tsx",
+        lineNumber: 33,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Outlet, {}, void 0, false, {
+        fileName: "app/root.tsx",
+        lineNumber: 34,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Scripts, {}, void 0, false, {
+        fileName: "app/root.tsx",
+        lineNumber: 35,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "app/root.tsx",
+      lineNumber: 32,
+      columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/root.tsx",
-    lineNumber: 23,
+    lineNumber: 27,
     columnNumber: 10
   }, this);
 }
@@ -89,6 +95,7 @@ $RefreshReg$(_c, "App");
 window.$RefreshReg$ = prevRefreshReg;
 window.$RefreshSig$ = prevRefreshSig;
 export {
-  App as default
+  App as default,
+  links
 };
-//# sourceMappingURL=/build/root-MNWKFVC4.js.map
+//# sourceMappingURL=/build/root-BDSOXRQQ.js.map
