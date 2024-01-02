@@ -63,19 +63,14 @@ function App() {
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("body", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h1", { children: "Hello world!" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Outlet, {}, void 0, false, {
         fileName: "app/root.tsx",
         lineNumber: 33,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Outlet, {}, void 0, false, {
-        fileName: "app/root.tsx",
-        lineNumber: 34,
-        columnNumber: 9
-      }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Scripts, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 35,
+        lineNumber: 34,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
@@ -98,4 +93,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-BDSOXRQQ.js.map
+//# sourceMappingURL=/build/root-TFOELRCJ.js.map

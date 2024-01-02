@@ -1,11 +1,7 @@
-import ComponentToString from '../../utils/componentToString'
-import SyntaxHighlighter from '../../utils/syntaxHighlighter'
+import { CodePreview } from '../../components/CodePreview'
 import ReactButton from '../../../_components/react-button'
-import Prism from 'prismjs';
-
 
 <ReactButton/>
 
-<pre>
-{ComponentToString(<ReactButton/>)}
-</pre>
+<CodePreview component={ReactButton}/>
+

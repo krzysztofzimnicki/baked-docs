@@ -1,7 +1,4 @@
-import { Component, ReactElement, useState } from "react";
-import { renderToString } from 'react-dom/server';
-
-function simpleFormatCode(code: string): string {
+export function SimplePrettify(code: string): string {
   let indentLevel = 0;
   const indentSize = 2; // Change this to control the number of spaces per indent
   let formattedCode = '';
@@ -31,12 +28,4 @@ function simpleFormatCode(code: string): string {
   return formattedCode.trim();
 }
 
-export default function ComponentToString(component: any) {
-  const [displayAsHTML, setDisplayAsHTML] = useState(false)
 
-  const componentString = renderToString(component);
-
-  const formattedCode = simpleFormatCode(componentString);
-
-  return <code className="language-html">{formattedCode}</code>
-}

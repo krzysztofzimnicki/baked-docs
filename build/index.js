@@ -147,19 +147,14 @@ function App() {
       columnNumber: 7
     }, this),
     /* @__PURE__ */ jsxDEV2("body", { children: [
-      /* @__PURE__ */ jsxDEV2("h1", { children: "Hello world!" }, void 0, !1, {
+      /* @__PURE__ */ jsxDEV2(Outlet, {}, void 0, !1, {
         fileName: "app/root.tsx",
         lineNumber: 17,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ jsxDEV2(Outlet, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 18,
-        columnNumber: 9
-      }, this),
       /* @__PURE__ */ jsxDEV2(Scripts, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 19,
+        lineNumber: 18,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
@@ -184,84 +179,108 @@ __export(route_exports, {
   meta: () => meta
 });
 
-// app/utils/componentToString.tsx
-import { renderToString } from "react-dom/server";
-import { jsxDEV as jsxDEV3 } from "react/jsx-dev-runtime";
-function simpleFormatCode(code) {
-  let indentLevel = 0, indentSize = 2, formattedCode = "", isInTag = !1;
-  for (let i = 0; i < code.length; i++) {
-    let char = code[i];
-    char === "<" && code[i + 1] !== "/" ? (formattedCode += `
-` + " ".repeat(indentLevel * indentSize) + char, indentLevel++, isInTag = !0) : char === ">" && isInTag ? (formattedCode += char, isInTag = !1) : char === "<" && code[i + 1] === "/" ? (indentLevel--, formattedCode += `
-` + " ".repeat(indentLevel * indentSize) + char) : formattedCode += char;
-  }
-  return formattedCode.trim();
-}
-function ComponentToString(component) {
-  let componentString = renderToString(component);
-  console.log(componentString);
-  let formattedCode = simpleFormatCode(componentString);
-  return /* @__PURE__ */ jsxDEV3("code", { className: "language-html", children: formattedCode }, void 0, !1, {
-    fileName: "app/utils/componentToString.tsx",
-    lineNumber: 43,
-    columnNumber: 10
-  }, this);
-}
+// app/components/CodePreview.tsx
+import { useState } from "react";
 
-// app/utils/syntaxHighlighter.tsx
-import Prism from "prismjs";
-import { jsxDEV as jsxDEV4 } from "react/jsx-dev-runtime";
+// app/utils/ReactToString.ts
+var ReactToString = (ReactComponent) => {
+  let propsToString = (props) => Object.entries(props).map(([key, value]) => {
+    let valueStr = typeof value == "string" ? `"${value}"` : `{${JSON.stringify(value)}}`;
+    return `${key}=${valueStr}`;
+  }).join(" "), componentName = ReactComponent.displayName || ReactComponent.name || "Component", componentPropsString = propsToString(ReactComponent.defaultProps || {});
+  return `<${componentName} ${componentPropsString} />`;
+};
+
+// app/utils/ReactToHTML.tsx
+import { renderToString } from "react-dom/server";
+var ReactToHTML = (ReactComponent) => renderToString(ReactComponent());
+
+// app/components/CodePreview.tsx
+import { jsxDEV as jsxDEV3 } from "react/jsx-dev-runtime";
+var CodePreview = ({ component }) => {
+  let [isHTMLPreview, setIsHTMLPreview] = useState(!1), ReactPreview = ReactToString(component), HTMLPreview = ReactToHTML(component);
+  return /* @__PURE__ */ jsxDEV3("div", { children: [
+    /* @__PURE__ */ jsxDEV3("button", { onClick: () => setIsHTMLPreview(!isHTMLPreview), children: "Toogle Preview" }, void 0, !1, {
+      fileName: "app/components/CodePreview.tsx",
+      lineNumber: 21,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV3("div", { children: isHTMLPreview ? /* @__PURE__ */ jsxDEV3("div", { children: /* @__PURE__ */ jsxDEV3("code", { children: HTMLPreview }, void 0, !1, {
+      fileName: "app/components/CodePreview.tsx",
+      lineNumber: 24,
+      columnNumber: 16
+    }, this) }, void 0, !1, {
+      fileName: "app/components/CodePreview.tsx",
+      lineNumber: 24,
+      columnNumber: 11
+    }, this) : /* @__PURE__ */ jsxDEV3("div", { children: /* @__PURE__ */ jsxDEV3("code", { children: ReactPreview }, void 0, !1, {
+      fileName: "app/components/CodePreview.tsx",
+      lineNumber: 26,
+      columnNumber: 16
+    }, this) }, void 0, !1, {
+      fileName: "app/components/CodePreview.tsx",
+      lineNumber: 26,
+      columnNumber: 11
+    }, this) }, void 0, !1, {
+      fileName: "app/components/CodePreview.tsx",
+      lineNumber: 22,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/CodePreview.tsx",
+    lineNumber: 20,
+    columnNumber: 5
+  }, this);
+};
 
 // _components/react-button.tsx
-import { jsxDEV as jsxDEV5 } from "react/jsx-dev-runtime";
-function ReactButton() {
-  return /* @__PURE__ */ jsxDEV5("button", { className: "bg-red-500 rounded-xl p-4", children: /* @__PURE__ */ jsxDEV5("p", { children: "Click me!" }, void 0, !1, {
+import { jsxDEV as jsxDEV4 } from "react/jsx-dev-runtime";
+ReactButton.defaultProps = {
+  props: "Test Prop"
+};
+function ReactButton(props) {
+  return /* @__PURE__ */ jsxDEV4("button", { className: "bg-red-500 rounded-xl p-4", onClick: props, children: /* @__PURE__ */ jsxDEV4("p", { children: "Click me!" }, void 0, !1, {
     fileName: "_components/react-button.tsx",
-    lineNumber: 7,
+    lineNumber: 11,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "_components/react-button.tsx",
-    lineNumber: 6,
+    lineNumber: 10,
     columnNumber: 5
   }, this);
 }
 
 // mdx:routes/components/route.mdx
-import "prismjs";
-import { Fragment, jsxDEV as jsxDEV6 } from "react/jsx-dev-runtime";
+import { Fragment, jsxDEV as jsxDEV5 } from "react/jsx-dev-runtime";
 function _createMdxContent(props) {
-  return /* @__PURE__ */ jsxDEV6(Fragment, { children: [
-    /* @__PURE__ */ jsxDEV6(ReactButton, {}, void 0, !1, {
+  return /* @__PURE__ */ jsxDEV5(Fragment, { children: [
+    /* @__PURE__ */ jsxDEV5(ReactButton, {}, void 0, !1, {
       fileName: "mdx:routes/components/route.mdx",
-      lineNumber: 8,
+      lineNumber: 6,
       columnNumber: 12
     }, this),
     `
 `,
-    /* @__PURE__ */ jsxDEV6("pre", { children: ComponentToString(/* @__PURE__ */ jsxDEV6(ReactButton, {}, void 0, !1, {
+    /* @__PURE__ */ jsxDEV5(CodePreview, { component: ReactButton }, void 0, !1, {
       fileName: "mdx:routes/components/route.mdx",
-      lineNumber: 8,
-      columnNumber: 57
-    }, this)) }, void 0, !1, {
-      fileName: "mdx:routes/components/route.mdx",
-      lineNumber: 8,
+      lineNumber: 6,
       columnNumber: 33
     }, this)
   ] }, void 0, !0, {
     fileName: "mdx:routes/components/route.mdx",
-    lineNumber: 8,
+    lineNumber: 6,
     columnNumber: 10
   }, this);
 }
 function MDXContent(props = {}) {
   let { wrapper: MDXLayout } = props.components || {};
-  return MDXLayout ? /* @__PURE__ */ jsxDEV6(MDXLayout, { ...props, children: /* @__PURE__ */ jsxDEV6(_createMdxContent, { ...props }, void 0, !1, {
+  return MDXLayout ? /* @__PURE__ */ jsxDEV5(MDXLayout, { ...props, children: /* @__PURE__ */ jsxDEV5(_createMdxContent, { ...props }, void 0, !1, {
     fileName: "mdx:routes/components/route.mdx",
-    lineNumber: 12,
+    lineNumber: 10,
     columnNumber: 44
   }, this) }, void 0, !1, {
     fileName: "mdx:routes/components/route.mdx",
-    lineNumber: 12,
+    lineNumber: 10,
     columnNumber: 22
   }, this) : _createMdxContent(props);
 }
@@ -272,9 +291,9 @@ var component_exports = {};
 __export(component_exports, {
   default: () => Component
 });
-import { jsxDEV as jsxDEV7 } from "react/jsx-dev-runtime";
+import { jsxDEV as jsxDEV6 } from "react/jsx-dev-runtime";
 function Component() {
-  return /* @__PURE__ */ jsxDEV7("main", { children: /* @__PURE__ */ jsxDEV7("p", { children: "Component" }, void 0, !1, {
+  return /* @__PURE__ */ jsxDEV6("main", { children: /* @__PURE__ */ jsxDEV6("p", { children: "Component" }, void 0, !1, {
     fileName: "app/routes/component.tsx",
     lineNumber: 4,
     columnNumber: 9
@@ -286,7 +305,7 @@ function Component() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-XFCPLNET.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-4TB67T4M.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-N2GCAXRV.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-BDSOXRQQ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/component": { id: "routes/component", parentId: "root", path: "component", index: void 0, caseSensitive: void 0, module: "/build/routes/component-MXG77LB2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/components": { id: "routes/components", parentId: "root", path: "components", index: void 0, caseSensitive: void 0, module: "/build/routes/components-NBUF32BU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "baf07c6f", hmr: { runtime: "/build/_shared/chunk-N2GCAXRV.js", timestamp: 1704195214893 }, url: "/build/manifest-BAF07C6F.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-XFCPLNET.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-4TB67T4M.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-N2GCAXRV.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-TFOELRCJ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/component": { id: "routes/component", parentId: "root", path: "component", index: void 0, caseSensitive: void 0, module: "/build/routes/component-MXG77LB2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/components": { id: "routes/components", parentId: "root", path: "components", index: void 0, caseSensitive: void 0, module: "/build/routes/components-ICM62OG2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "6d1e08ce", hmr: { runtime: "/build/_shared/chunk-N2GCAXRV.js", timestamp: 1704201277553 }, url: "/build/manifest-6D1E08CE.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1 }, publicPath = "/build/", entry = { module: entry_server_node_exports }, routes = {
