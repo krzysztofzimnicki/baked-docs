@@ -165,14 +165,107 @@ function App() {
   }, this);
 }
 
+// mdx:routes/components/route.mdx
+var route_exports = {};
+__export(route_exports, {
+  default: () => route_default,
+  filename: () => filename,
+  handle: () => handle,
+  headers: () => headers,
+  meta: () => meta
+});
+
+// app/utils/componentToString.tsx
+import { renderToString } from "react-dom/server";
+import { jsxDEV as jsxDEV3 } from "react/jsx-dev-runtime";
+function simpleFormatCode(code) {
+  let indentLevel = 0, indentSize = 2, formattedCode = "", isInTag = !1;
+  for (let i = 0; i < code.length; i++) {
+    let char = code[i];
+    char === "<" && code[i + 1] !== "/" ? (formattedCode += `
+` + " ".repeat(indentLevel * indentSize) + char, indentLevel++, isInTag = !0) : char === ">" && isInTag ? (formattedCode += char, isInTag = !1) : char === "<" && code[i + 1] === "/" ? (indentLevel--, formattedCode += `
+` + " ".repeat(indentLevel * indentSize) + char) : formattedCode += char;
+  }
+  return formattedCode.trim();
+}
+function ComponentToString(component) {
+  let componentString = renderToString(component);
+  console.log(componentString);
+  let formattedCode = simpleFormatCode(componentString);
+  return /* @__PURE__ */ jsxDEV3("code", { className: "language-html", children: formattedCode }, void 0, !1, {
+    fileName: "app/utils/componentToString.tsx",
+    lineNumber: 43,
+    columnNumber: 10
+  }, this);
+}
+
+// app/utils/syntaxHighlighter.tsx
+import Prism from "prismjs";
+import { jsxDEV as jsxDEV4 } from "react/jsx-dev-runtime";
+
+// _components/react-button.tsx
+import { jsxDEV as jsxDEV5 } from "react/jsx-dev-runtime";
+function ReactButton() {
+  return /* @__PURE__ */ jsxDEV5("button", { className: "bg-red-500 rounded-xl", children: /* @__PURE__ */ jsxDEV5("p", { children: "Click me!" }, void 0, !1, {
+    fileName: "_components/react-button.tsx",
+    lineNumber: 7,
+    columnNumber: 13
+  }, this) }, void 0, !1, {
+    fileName: "_components/react-button.tsx",
+    lineNumber: 6,
+    columnNumber: 9
+  }, this);
+}
+
+// mdx:routes/components/route.mdx
+import "prismjs";
+import { Fragment, jsxDEV as jsxDEV6 } from "react/jsx-dev-runtime";
+function _createMdxContent(props) {
+  return /* @__PURE__ */ jsxDEV6(Fragment, { children: [
+    /* @__PURE__ */ jsxDEV6(ReactButton, {}, void 0, !1, {
+      fileName: "mdx:routes/components/route.mdx",
+      lineNumber: 8,
+      columnNumber: 12
+    }, this),
+    `
+`,
+    /* @__PURE__ */ jsxDEV6("pre", { children: ComponentToString(/* @__PURE__ */ jsxDEV6(ReactButton, {}, void 0, !1, {
+      fileName: "mdx:routes/components/route.mdx",
+      lineNumber: 8,
+      columnNumber: 57
+    }, this)) }, void 0, !1, {
+      fileName: "mdx:routes/components/route.mdx",
+      lineNumber: 8,
+      columnNumber: 33
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "mdx:routes/components/route.mdx",
+    lineNumber: 8,
+    columnNumber: 10
+  }, this);
+}
+function MDXContent(props = {}) {
+  let { wrapper: MDXLayout } = props.components || {};
+  return MDXLayout ? /* @__PURE__ */ jsxDEV6(MDXLayout, { ...props, children: /* @__PURE__ */ jsxDEV6(_createMdxContent, { ...props }, void 0, !1, {
+    fileName: "mdx:routes/components/route.mdx",
+    lineNumber: 12,
+    columnNumber: 44
+  }, this) }, void 0, !1, {
+    fileName: "mdx:routes/components/route.mdx",
+    lineNumber: 12,
+    columnNumber: 22
+  }, this) : _createMdxContent(props);
+}
+var route_default = MDXContent, filename = "route.mdx", headers = typeof attributes < "u" && attributes.headers, meta = typeof attributes < "u" && attributes.meta, handle = typeof attributes < "u" && attributes.handle;
+
 // app/routes/component.tsx
 var component_exports = {};
 __export(component_exports, {
   default: () => Component
 });
-import { jsxDEV as jsxDEV3 } from "react/jsx-dev-runtime";
+import { jsxDEV as jsxDEV7 } from "react/jsx-dev-runtime";
 function Component() {
-  return /* @__PURE__ */ jsxDEV3("main", { children: /* @__PURE__ */ jsxDEV3("p", { children: "Component" }, void 0, !1, {
+  return /* @__PURE__ */ jsxDEV7("main", { children: /* @__PURE__ */ jsxDEV7("p", { children: "Component" }, void 0, !1, {
     fileName: "app/routes/component.tsx",
     lineNumber: 4,
     columnNumber: 9
@@ -183,88 +276,8 @@ function Component() {
   }, this);
 }
 
-// mdx:routes/button.mdx
-var button_exports = {};
-__export(button_exports, {
-  default: () => button_default,
-  filename: () => filename,
-  handle: () => handle,
-  headers: () => headers,
-  meta: () => meta
-});
-
-// app/utils/componentToString.tsx
-import { renderToString } from "react-dom/server";
-import { jsxDEV as jsxDEV4 } from "react/jsx-dev-runtime";
-function ComponentToString(component) {
-  let componentString = renderToString(component);
-  return console.log(componentString), /* @__PURE__ */ jsxDEV4("pre", { children: componentString }, void 0, !1, {
-    fileName: "app/utils/componentToString.tsx",
-    lineNumber: 9,
-    columnNumber: 10
-  }, this);
-}
-
-// mdx:routes/button.mdx
-import { Fragment, jsxDEV as jsxDEV5 } from "react/jsx-dev-runtime";
-function _createMdxContent(props) {
-  let _components = Object.assign({
-    h1: "h1",
-    pre: "pre",
-    code: "code",
-    div: "div"
-  }, props.components);
-  return /* @__PURE__ */ jsxDEV5(Fragment, { children: [
-    /* @__PURE__ */ jsxDEV5(_components.h1, { children: "Hello MDX!" }, void 0, !1, {
-      fileName: "mdx:routes/button.mdx",
-      lineNumber: 11,
-      columnNumber: 12
-    }, this),
-    `
-`,
-    /* @__PURE__ */ jsxDEV5(_components.pre, { children: /* @__PURE__ */ jsxDEV5(_components.code, { className: "language-js", children: `console.log(1)
-` }, void 0, !1, {
-      fileName: "mdx:routes/button.mdx",
-      lineNumber: 11,
-      columnNumber: 82
-    }, this) }, void 0, !1, {
-      fileName: "mdx:routes/button.mdx",
-      lineNumber: 11,
-      columnNumber: 65
-    }, this),
-    `
-`,
-    /* @__PURE__ */ jsxDEV5("pre", { children: ComponentToString(/* @__PURE__ */ jsxDEV5(_components.div, {}, void 0, !1, {
-      fileName: "mdx:routes/button.mdx",
-      lineNumber: 11,
-      columnNumber: 211
-    }, this)) }, void 0, !1, {
-      fileName: "mdx:routes/button.mdx",
-      lineNumber: 11,
-      columnNumber: 187
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "mdx:routes/button.mdx",
-    lineNumber: 11,
-    columnNumber: 10
-  }, this);
-}
-function MDXContent(props = {}) {
-  let { wrapper: MDXLayout } = props.components || {};
-  return MDXLayout ? /* @__PURE__ */ jsxDEV5(MDXLayout, { ...props, children: /* @__PURE__ */ jsxDEV5(_createMdxContent, { ...props }, void 0, !1, {
-    fileName: "mdx:routes/button.mdx",
-    lineNumber: 15,
-    columnNumber: 44
-  }, this) }, void 0, !1, {
-    fileName: "mdx:routes/button.mdx",
-    lineNumber: 15,
-    columnNumber: 22
-  }, this) : _createMdxContent(props);
-}
-var button_default = MDXContent, filename = "button.mdx", headers = typeof attributes < "u" && attributes.headers, meta = typeof attributes < "u" && attributes.meta, handle = typeof attributes < "u" && attributes.handle;
-
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-5MH5CVPY.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-NYO3GUPC.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-BX4DQHXW.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-MFQXYO3J.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/button": { id: "routes/button", parentId: "root", path: "button", index: void 0, caseSensitive: void 0, module: "/build/routes/button-WXRNWKND.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/component": { id: "routes/component", parentId: "root", path: "component", index: void 0, caseSensitive: void 0, module: "/build/routes/component-LSXLKKCW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "4529af5b", hmr: { runtime: "/build/_shared/chunk-BX4DQHXW.js", timestamp: 1703187453891 }, url: "/build/manifest-4529AF5B.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-XFCPLNET.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-4TB67T4M.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-N2GCAXRV.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-MNWKFVC4.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/component": { id: "routes/component", parentId: "root", path: "component", index: void 0, caseSensitive: void 0, module: "/build/routes/component-MXG77LB2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/components": { id: "routes/components", parentId: "root", path: "components", index: void 0, caseSensitive: void 0, module: "/build/routes/components-PDHYFG7Z.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "6b2ebb26", hmr: { runtime: "/build/_shared/chunk-N2GCAXRV.js", timestamp: 1704187654763 }, url: "/build/manifest-6B2EBB26.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1 }, publicPath = "/build/", entry = { module: entry_server_node_exports }, routes = {
@@ -276,6 +289,14 @@ var mode = "development", assetsBuildDirectory = "public/build", future = { v3_f
     caseSensitive: void 0,
     module: root_exports
   },
+  "routes/components": {
+    id: "routes/components",
+    parentId: "root",
+    path: "components",
+    index: void 0,
+    caseSensitive: void 0,
+    module: route_exports
+  },
   "routes/component": {
     id: "routes/component",
     parentId: "root",
@@ -283,14 +304,6 @@ var mode = "development", assetsBuildDirectory = "public/build", future = { v3_f
     index: void 0,
     caseSensitive: void 0,
     module: component_exports
-  },
-  "routes/button": {
-    id: "routes/button",
-    parentId: "root",
-    path: "button",
-    index: void 0,
-    caseSensitive: void 0,
-    module: button_exports
   }
 };
 export {

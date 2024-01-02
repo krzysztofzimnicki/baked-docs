@@ -3,7 +3,7 @@ import {
 } from "/build/_shared/chunk-XU7DNSPJ.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-BX4DQHXW.js";
+} from "/build/_shared/chunk-N2GCAXRV.js";
 import "/build/_shared/chunk-UWV35TSL.js";
 import "/build/_shared/chunk-BOXFZXVX.js";
 import {
@@ -29,7 +29,7 @@ if (import.meta) {
     //@ts-expect-error
     "app/routes/component.tsx"
   );
-  import.meta.hot.lastModified = "1703185365516.854";
+  import.meta.hot.lastModified = "1703233008748.798";
 }
 function Component() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("main", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: "Component" }, void 0, false, {
@@ -50,4 +50,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   Component as default
 };
-//# sourceMappingURL=/build/routes/component-LSXLKKCW.js.map
+//# sourceMappingURL=/build/routes/component-MXG77LB2.js.map
